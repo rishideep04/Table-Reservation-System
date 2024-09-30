@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 40px;
+    color: #333;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    max-width: 500px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .form-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-field {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], input[type="tel"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: black;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: red;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="tel"]::placeholder,
+  input[type="email"]::placeholder,
+  textarea::placeholder {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .checkbox-field {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  .checkbox-field input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox-field label {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .checkbox-field label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: border-color 0.3s ease;
+  }
+
+  .checkbox-field label:after {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    left: 5px;
+    top: 2px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .checkbox-field input[type="checkbox"]:checked + label:before {
+    background-color: #0088ff;
+    border-color: #0088ff;
+  }
+
+  .checkbox-field input[type="checkbox"]:checked + label:after {
+    display: block;
+  }
+
+  .file-field {
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .file-field label {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .file-field input[type="file"] {
+    display: none;
+  }
+
+  .file-button {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    background-color: #0088ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .file-button:hover {
+    background-color: #0066cc;
+  }
+
+  #submit-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 230px;
+    border: none;
+    background-color: #0088ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  #submit-button:hover {
+    background-color: #0066cc;
+  }
+</style>
+</head>
+<body>
+  <h1 align="center">Careers</h1>
+  <p>We are hiring! Apply below to become a part of our awesome team and<br> we'll get back to you ASAP!</p>
+  <p>Alternatively, if you have questions you can call us at <strong style="color:black">(702) 331-5565</strong></p>
+  <form id="application-form"> 
+    <div class="form-container">
+      <div class="form-field">
+        <input type="text" id="name" placeholder="Name..." />
+      </div>
+
+      <div class="form-field">
+        <input type="tel" id="phone" placeholder="Phone..." />
+      </div>
+
+      <div class="form-field checkbox-field">
+        <input type="checkbox" id="ch1" />
+        <label for="ch1">I'd like to get texts about specials, events, and other exclusive offers and announcements not available to the general public. <a href="privacy.html">Privacy Policy</a></label>
+      </div>
+
+      <div class="form-field">
+        <input type="email" id="email" placeholder="Email..." />
+      </div>
+
+      <div class="form-field">
+        <input type="text" id="service" placeholder="Service Industry Experience..(ex 3 years serving)" />
+      </div>
+
+      <div class="form-field">
+        <label>Applying For:</label>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch2" value="Bartender" />
+          <label for="ch2">Bartender</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch3" value="Busser/Bus Person" />
+          <label for="ch3">Busser/Bus Person</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch4" value="Dishwasher" />
+          <label for="ch4">Dishwasher</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch5" value="Kitchen Manager" />
+          <label for="ch5">Kitchen Manager</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch6" value="Line Cook" />
+          <label for="ch6">Line Cook</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch7" value="Prep Cook" />
+          <label for="ch7">Prep Cook</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch8" value="Server" />
+          <label for="ch8">Server</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="ch9" value="Sous Chef" />
+          <label for="ch9">Sous Chef</label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <textarea id="letter" rows="4" cols="50" placeholder="Cover Letter (optional)..."></textarea>
+      </div>
+
+      <div class="form-field file-field">
+        <label for="resume">Resume:</label>
+        <input type="file" id="resume" />
+        <label for="resume" class="file-button">Choose a File</label>
+      </div>
+
+      <div class="form-field file-field">
+        <label for="photo">Your Photo (optional):</label>
+        <input type="file" id="photo" />
+        <label for="photo" class="file-button">Upload a Photo</label>
+      </div>
+
+      <div class="form-field">
+        <input type="submit" value="Submit" id="submit-button" />
+      </div>
+    </div>
+  </form>
+<script>
+  // JavaScript code
+  document.getElementById("application-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Retrieve form field values
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var checkbox1 = document.getElementById("ch1").checked;
+    var service = document.getElementById("service").value;
+    var applyingForCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var applyingForValues = Array.from(applyingForCheckboxes).map(function(checkbox) {
+      return checkbox.value;
+    });
+    var coverLetter = document.getElementById("letter").value;
+    var resume = document.getElementById("resume").files[0];
+
+    // Create the text to be saved in the notepad
+    var text = "Name: " + name + "\n"
+               + "Phone: " + phone + "\n"
+               + "Email: " + email + "\n"
+               + "Notify: " + checkbox1 + "\n"
+               + "Service Industry Experience: " + service + "\n"
+               + "Applying For: " + applyingForValues.join(", ") + "\n"
+               + "Cover Letter: " + coverLetter + "\n";
+
+    // Save the text in a notepad
+    saveTextToFile(text, "application.txt");
+  });
+
+  // Function to save text content in a file
+  function saveTextToFile(text, filename) {
+    var element = document.createElement("a");
+    element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+    element.setAttribute("download", filename);
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
+</body>
+</html>
+

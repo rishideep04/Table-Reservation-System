@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambrosia Bistro - Reservation</title>
+  <link rel="stylesheet" href="table reservation css page.css">
+</head>
+<body bgcolor="#1d1d1d">
+  <header>
+    <h1 align="center" style="color:rgb(151, 65, 252)">Americana Las Vegas</h1>
+  </header>
+
+  <section class="reservation slide-in">
+    <h2>Make a Reservation</h2>
+    <form id="reservationForm">
+      <div class="custom-dropdown">
+        <label for="people">Number of People:</label>
+        <select id="people" name="people">
+          <!-- Options -->
+          <option value="1">1 person</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4">4 people</option>
+          <option value="5">5 people</option>
+          <option value="6">6 people</option>
+          <option value="7">7 people</option>
+          <option value="8">8 people</option>
+          <option value="9">9 people</option>
+          <option value="10">10 people</option>
+          <option value="11">11 people</option>
+          <option value="12">12 people</option>
+          <option value="13">13 people</option>
+          <option value="14">14 people</option>
+          <option value="15">15 people</option>
+          <option value="16">16 people</option>
+          <option value="17">17 people</option>
+          <option value="18">18 people</option>
+          <option value="19">19 people</option>
+          <option value="20">20 people</option>
+        </select>
+      </div>
+
+      <div class="custom-dropdown">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="custom-dropdown">
+        <label for="time">Time:</label>
+        <select id="time" name="time">
+          <!-- Options -->
+          <option value="03:30">3:30 AM</option>
+          <option value="04:00">4:00 AM</option>
+          <option value="04:30">4:30 AM</option>
+          <option value="05:00">5:00 AM</option>
+          <option value="05:30">5:30 AM</option>
+          <option value="06:00">6:00 AM</option>
+          <option value="06:30">6:30 AM</option>
+          <option value="07:00">7:00 AM</option>
+          <option value="07:30">7:30 AM</option>
+          <option value="08:00">8:00 AM</option>
+          <option value="08:30">8:30 AM</option>
+          <option value="09:00">9:00 AM</option>
+          <option value="09:30">9:30 AM</option>
+          <option value="10:00">10:00 AM</option>
+          <option value="10:30">10:30 AM</option>
+          <option value="11:00">11:00 AM</option>
+          <option value="11:30">11:30 AM</option>
+          <option value="12:00">12:00 PM</option>
+          <option value="12:30">12:30 PM</option>
+          <option value="13:00">1:00 PM</option>
+          <option value="13:30">1:30 PM</option>
+          <option value="14:00">2:00 PM</option>
+          <option value="14:30">2:30 PM</option>
+          <option value="15:00">3:00 PM</option>
+          <option value="15:30">3:30 PM</option>
+          <option value="16:00">4:00 PM</option>
+          <option value="16:30">4:30 PM</option>
+          <option value="17:00">5:00 PM</option>
+          <option value="17:30">5:30 PM</option>
+          <option value="18:00">6:00 PM</option>
+          <option value="18:30">6:30 PM</option>
+          <option value="19:00">7:00 PM</option>
+          <option value="19:30">7:30 PM</option>
+          <option value="20:00">8:00 PM</option>
+          <option value="20:30">8:30 PM</option>
+          <option value="21:00">9:00 PM</option>
+          <option value="21:30">9:30 PM</option>
+          <option value="22:00">10:00 PM</option>
+          <option value="22:30">10:30 PM</option>
+          <option value="23:00">11:00 PM</option>
+          <option value="23:30">11:30 PM</option>
+        </select>
+      </div>
+
+      <button id="findTableBtn" class="button button1" type="submit" style="padding-left:100px;padding-right:100px">Find a Table</button>
+    </form>
+  </section>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3>Reservation Details</h3>
+      <form id="reservationDetailsForm" onsubmit="return validateForm()">
+        <div class="details-column">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required><br>
+        
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required><br>
+        
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required><br>
+        
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+        
+          <label for="occasion">Occasion:</label>
+          <select id="occasion" name="occasion">
+            <!-- Options -->
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Special Event">Special Event</option>
+            <option value="Other">Other</option>
+          </select><br>
+        
+          <label for="specialRequest">Special Request:</label>
+          <textarea id="specialRequest" name="specialRequest"></textarea><br>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="cb1" name="cb1" value="cb1">
+            <label for="cb1">Yes, I want to get text updates and reminders about my reservations.*</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="cb2" name="cb2" value="cb2">
+            <label for="cb2">Sign me up to receive dining offers and news from this restaurant by email.</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="cb3" name="cb3" value="cb3">
+            <label for="cb3">Sign me up to receive dining offers and news from Americana by email.</label>
+          </div>
+
+          <div class="details-buttons">
+            <button id="confirmBtn" type="submit">Confirm</button>
+            <button id="cancelBtn" type="button" onclick="closePopup()">Cancel</button>
+          </div>        
+        </div>
+
+        <div class="details-column">
+          <div class="restaurant-details">
+            <h3>Ambrosia Bistro</h3>
+            <p><strong>Date:</strong> <span id="reservation-date"></span></p>
+            <p><strong>Time:</strong> <span id="reservation-time"></span></p>
+            <p><strong>Number of People:</strong> <span id="reservation-people"></span></p>
+            <p><strong>Location:</strong> <span id="location"></span></p>
+          </div>
+
+          <hr>
+          <p id="additionalText"><strong>What to know before you go</strong></p>
+          <p id="additionalText">A note from the restaurant:<br>Thank you for choosing to dine with us at Americana Las Vegas. Should your plans change, please let us know in advance. Please call us at +91 7708460824 for inquiries or special events. We at Americana value your patronage and will do our best to accommodate<span id="dots">...</span><span id="more"> , All request for seating is not guaranteed, but we will try our very best to accommodate.</span></p>
+
+          <button onclick="readMoreFunction()" id="readMoreBtn" style="color:red">+ Read More</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="tablereservationpage1.js"></script>
+  <script>
+var dataList = []; // Array to store form data entries
+var timer; // Variable to store the timer
+
+// Function to save form data
+function saveData() {
+  var form = document.getElementById('reservationDetailsForm');
+  var firstName = form.elements['firstName'].value;
+  var lastName = form.elements['lastName'].value;
+  var phone = form.elements['phone'].value;
+  var email = form.elements['email'].value;
+  var occasion = form.elements['occasion'].value;
+  var specialRequest = form.elements['specialRequest'].value || 'NA'; // Set specialRequest to 'NA' if it's empty
+
+  var data = "First Name: " + firstName + "\nLast Name: " + lastName + "\nPhone Number: " + phone + "\nEmail: " + email + "\nOccasion: " + occasion + "\nSpecial Request: " + specialRequest + "\n\n";
+  dataList.push(data); // Add data to the array
+
+  form.reset(); // Reset form fields after submission
+
+  if (dataList.length > 0) {
+    var link = document.createElement('a');
+    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(dataList.join(""));
+    link.download = 'data.txt';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+}
+
+// Function to validate form fields
+function validateForm() {
+  var form = document.getElementById('reservationDetailsForm');
+  var firstName = form.elements['firstName'].value;
+  var lastName = form.elements['lastName'].value;
+  var phone = form.elements['phone'].value;
+  var email = form.elements['email'].value;
+  var specialRequest = form.elements['specialRequest'].value || 'NA'; // Set specialRequest to 'NA' if it's empty
+
+  if (firstName === '' || lastName === '' || phone === '' || email === '') {
+    alert('Please fill in all the required fields.');
+    return false;
+  }
+
+  return true;
+}
+
+// Function to close the popup
+function closePopup() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'none';
+
+  // Clear the timer if the popup is closed
+  clearTimeout(timer);
+}
+
+
+// Add event listener to the form submission
+document.getElementById('reservationDetailsForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+  if (validateForm()) {
+    saveData();
+    closePopup();
+    showThankYouMessage();
+  }
+});
+
+function showThankYouMessage() {
+  var reservationSection = document.querySelector('.reservation');
+  var existingThankYouMessage = document.getElementById('thankYouMessage');
+
+  if (existingThankYouMessage) {
+    reservationSection.removeChild(existingThankYouMessage);
+  }
+
+  var thankYouMessage = document.createElement('p');
+  thankYouMessage.innerHTML = 'Thank you for choosing Americana Las Vegas!';
+  thankYouMessage.style.color = 'Red';
+  thankYouMessage.id = 'thankYouMessage';
+  reservationSection.appendChild(thankYouMessage);
+}
+
+
+
+  </script>
+  <footer>
+    <p class="reserve" style="color:white">&copy; 2023 Americana Las Vegas. All rights reserved.</p>
+  </footer>
+</body>
+</html>
